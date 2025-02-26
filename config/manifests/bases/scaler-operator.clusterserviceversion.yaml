@@ -1,0 +1,46 @@
+apiVersion: operators.coreos.com/v1alpha1
+kind: ClusterServiceVersion
+metadata:
+  annotations:
+    alm-examples: '[]'
+    capabilities: Basic Install
+  name: scaler-operator.v0.0.0
+  namespace: placeholder
+spec:
+  apiservicedefinitions: {}
+  customresourcedefinitions:
+    owned:
+    - description: Scaler is the Schema for the scalers API
+      displayName: Scaler
+      kind: Scaler
+      name: scalers.api.example.com
+      version: v1alpha1
+  description: This operator scales the deployment specified in the CR.
+  displayName: scaler-op
+  icon:
+  - base64data: ""
+    mediatype: ""
+  install:
+    spec:
+      deployments: null
+    strategy: ""
+  installModes:
+  - supported: true
+    type: OwnNamespace
+  - supported: true
+    type: SingleNamespace
+  - supported: true
+    type: MultiNamespace
+  - supported: true
+    type: AllNamespaces
+  keywords:
+  - scalers
+  - scaler
+  - pod-scaler
+  links:
+  - name: Scaler Operator
+    url: https://scaler-operator.domain
+  maturity: alpha
+  provider:
+    name: scaler-operator
+  version: 0.0.0
